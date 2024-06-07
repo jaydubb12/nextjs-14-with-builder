@@ -1,6 +1,6 @@
-import {BuilderContent} from '@builder.io/sdk';
-
-export interface BuilderPageProps {
-    content?: BuilderContent;
-    model: string;
+export interface PageProps {
+    params: {
+        slug: string[];
+    };
+    searchParams: Record<string, string>;
 }
