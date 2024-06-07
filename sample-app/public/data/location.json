@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": "001",
+      "name": "Weigel Funeral Home",
+      "address": "151 W George St, Batesville, IN 47006",
+      "selected": true
+    },
+    {
+      "id": "002",
+      "name": "Cook Rosenberger Funeral Home",
+      "address": "107 W Vine St, Sunman, IN 47041",
+      "selected": false
+    },
+    {
+      "id": "003",
+      "name": "Frank E. Campbell Chapel",
+      "address": "30 Madison Ave, New York, NY 10021",
+      "selected": false
+    },
+    {
+      "id": "004",
+      "name": "John Kritl",
+      "address": "1297 First Ave, Batesville, IN 47006",
+      "selected": false
+    }
+  ]
+}
