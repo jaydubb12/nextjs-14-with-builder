@@ -1,23 +1,27 @@
 // page.tsx - Home Page
 
 import React from 'react';
-import {Content, fetchOneEntry, getBuilderSearchParams, isPreviewing} from '@builder.io/sdk-react';
+import {Content, fetchOneEntry, getBuilderSearchParams, isEditing, isPreviewing} from '@builder.io/sdk-react';
 import {PageProps} from '~/types/types';
 
-
-
 // Builder Public API Key set in .env file
-const apiKey = 'ef5268376769437498572f9ea7691860';
+const apiKey = `${process.env.NEXT_PUBLIC_BUILDER_API_KEY}`;
 
 export default async function HomePage(props: PageProps) {
+
+
     const urlPath = '/' + (props.params?.slug?.join('/') || '');
     const content = await fetchOneEntry({
         model: 'page',
         apiKey,
-        options: getBuilderSearchParams(props.searchParams),
+        options:
+            getBuilderSearchParams(props.searchParams),
         userAttributes: { urlPath },
     });
-    const canShowContent = content || isPreviewing(props.searchParams);
+    const canShowContent =
+        content ||
+        isPreviewing(props.searchParams)
+        isEditing(props.searchParams);
 
     if (!canShowContent) {
         return (
@@ -33,8 +37,9 @@ export default async function HomePage(props: PageProps) {
             {/* Render the Builder page */}
             <Content
                 content={content}
-                model="page"
-                apiKey={apiKey} />;
+                model= 'page'
+                apiKey={apiKey}
+            />;
         </>
     );
 }
