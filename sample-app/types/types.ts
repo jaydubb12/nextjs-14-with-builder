@@ -1,7 +1,7 @@
 export interface PageProps {
     model: string,
-    params: {
-        slug: string[];
+    params?: {
+        slug?: string[];
     };
-    searchParams: Record<string, string>;
+    searchParams?: Record<string, string>;
 }
