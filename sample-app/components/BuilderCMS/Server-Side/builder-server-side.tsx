@@ -14,7 +14,7 @@ import {PageProps} from '~/types/types'; // Import custom components from builde
 export default async function  RenderServerSideBuilderContent(props:PageProps) {
     const urlPath = '/' + (props.params?.slug?.join('/') || ''); // sets path for all content as /
 
-    // useEffect hook to fetch content when component mounts
+    // function retrieves content during server side page compilation
     const content = await fetchOneEntry({
             model: props.model, // Use model prop to specify Builder.io model when component is used
             apiKey: BuilderApiKey,
